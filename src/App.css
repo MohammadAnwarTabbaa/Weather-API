@@ -72,7 +72,7 @@ button {
   align-self: center;
   margin: auto;
 }
-.weather div {
+.weatherItem {
   display: grid;
   justify-items: center;
 }
@@ -82,8 +82,8 @@ h1 {
 }
 .mainImage {
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   margin: auto;
 }
 .Temp,

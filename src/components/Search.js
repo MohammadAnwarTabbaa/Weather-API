@@ -1,32 +1,14 @@
-import React from "react";
+import React, { Component } from 'react'
 
-import clear from "../img/weather-icons/clear.svg";
-import "./Search.css";
-class Search extends React.Component {
-  state = {
-    input: ""
-  };
-
+export class Search extends Component {
   render() {
     return (
-      <div>
-        {this.state.input}
-        <input
-          type="text"
-          id="input-name"
-          onChange={event => {
-            this.setState({ input: event.target.value });
-          }}
-        />
-        <button
-          onClick={event => {
-            this.props.handleInput(this.state.input);
-          }}
-        >
-          Say Hello
-        </button>
-      </div>
-    );
+      <header>
+      <input className="input" type="text" defaultValue="Type in a city name" />
+      <button>FIND WEATHER</button>
+    </header>
+    )
   }
 }
-export default Search;
+
+export default Search

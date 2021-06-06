@@ -5,6 +5,9 @@ import SayHi, { SayHello } from "./components/WeatherItem";
 import fakeWeatherData from "./fakeWeatherData.json";
 
 import "./App.css";
+import Weather from "./components/Weather";
+import MainWeather from "./components/MainWeather";
+
 
 class App extends Component {
   constructor(props) {
@@ -21,13 +24,14 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <header >
+        {/* <header >
           <input className="input" type="text" defaultValue="Type in a city name" />
           <button>FIND WEATHER</button>
-        </header>
+        </header> */}
+        <Search/>
        <div className="body">
        
-       <div className="mainWeather"> 
+       {/* <div className="mainWeather"> 
         <img className="mainImage" src="http://placekitten.com/200/300" alt="cat" />
         <br/>       
         <div className="Temp">
@@ -45,8 +49,8 @@ class App extends Component {
         <p className className="prusser">1008.48</p>
        </div>
 
-      </div>
-       <div className="weather">
+      </div> */}
+       {/* <div className="weather">
          <div>
          <p className="time" >03:00</p>
         <img className="downImage" src="http://placekitten.com/g/200/300"></img>
@@ -89,11 +93,11 @@ class App extends Component {
         <p className="downTemp">13<span>&#176;</span></p>
         </div>
  
+       </div> */}
+       
+       <MainWeather/>
+       <Weather/>
 
-
-
-
-       </div>
        </div>
 
       </div>
