@@ -7,8 +7,9 @@ export class MainWeather extends Component {
         return (
             <div className="mainWeather">
                 <img className="mainImage" src={clear} alt="clear"/>
-                <Tempreture/>
-                <Pressure/>
+                
+                <Tempreture temp={this.props.weatherarray}/>
+                <Pressure pressure={this.props.weatherarray}/>
                 
             </div>
         )

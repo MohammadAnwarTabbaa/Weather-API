@@ -5,9 +5,9 @@ export class Pressure extends Component {
         return (
         <div className="Pressure">
         <p>Humiditly </p> 
-        <p>78 <span>%</span></p>
+        <p>{this.props.pressure.humidity} <span>%</span></p>
         <p>Prusser</p>
-        <p>1008.48</p>
+        <p>{this.props.pressure.pressure}</p>
         </div>
         )
     }

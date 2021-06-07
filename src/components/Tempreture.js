@@ -5,9 +5,10 @@ export class Tempreture extends Component {
         return (
         <div className="Temp">
         <p>Temperature </p> 
-        <p>10 <span>&#176;</span></p>
+        {/* it is for conver to celsius */}
+        <p>{Math.floor((this.props.temp.temp_max-32)*5/9)}<span>&#176;</span></p>
         <p>to</p>
-        <p>11</p>
+        <p>{Math.floor((this.props.temp.temp_min-32)*5/9)}</p>
         <p>&#8451;</p>
         </div>
         )
