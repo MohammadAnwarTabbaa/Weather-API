@@ -10,15 +10,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    weather :""
+    weather :"" , 
+    api :""
       };
   }
 
-  
-  
+    
 componentDidMount(){
-  this.setState({weather: fakeWeatherData.list[0].main})
+  this.setState({weather: fakeWeatherData.list[0].main}) 
+  this.setState({api:"http://api.openweathermap.org/data/2.5/forecast?q=$london&cnt=8&units=metric&appid=$2bd2287a550d85770965019180356c1a" })
 }
+
   render() {
     
     return (
@@ -26,6 +28,7 @@ componentDidMount(){
         <Search/>
        <div className="body">    
        <MainWeather weatherarray = {this.state.weather}/>
+       
        <Weather/>
        </div>
       </div>
