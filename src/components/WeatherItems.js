@@ -1,19 +1,10 @@
 import React, { Component } from 'react'
 import WeatherItem from './WeatherItem'
-
-
 export class WeatherItems extends Component {
     render() {
-        return (
-       <div className="weather">
-        <WeatherItem/>
-        <WeatherItem/>
-        <WeatherItem/>
-        <WeatherItem/>
-        <WeatherItem/>
-        <WeatherItem/>
-      </div>
-        )
+          return  this.props.weather.slice(1,8).map((weatherDetail)=>(
+         <WeatherItem key={weatherDetail.dt} weather={weatherDetail} />
+        ));
     }
 }
 

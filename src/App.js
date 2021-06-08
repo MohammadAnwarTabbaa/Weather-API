@@ -1,35 +1,48 @@
 import React, { Component } from "react";
 import Search from "./components/Search";
-import fakeWeatherData from "./fakeWeatherData.json";
+
 import "./App.css";
 import Weather from "./components/Weather";
 import MainWeather from "./components/MainWeather";
+import FakeWeather from "./data/FakeWeather.json"
 
 
+//Sorry for all json commit before but thi is the final commit :)
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+    // this for main weather 
     weather :"" , 
-    api :""
+    // this for down weather
+    downWeather : [] ,
+
+    // those for api 
+    // items : [],
+    // isLoaded : false,
+    // city : "",
+    // kye : ""
       };
   }
-
+ 
+ 
     
 componentDidMount(){
-  this.setState({weather: fakeWeatherData.list[0].main}) 
-  this.setState({api:"http://api.openweathermap.org/data/2.5/forecast?q=$london&cnt=8&units=metric&appid=$2bd2287a550d85770965019180356c1a" })
-}
+  this.setState({weather: FakeWeather.list[0].main}) 
+  this.setState({downWeather: FakeWeather.list}) 
+ }
 
-  render() {
-    
-    return (
+  
+render() {
+
+     return (
       <div className="app">
         <Search/>
-       <div className="body">    
+       <div className="body">
+         {/* testing  */}
+       {/* {this.state.isLoaded && console.log(this.state.items)}  */}
        <MainWeather weatherarray = {this.state.weather}/>
-       
-       <Weather/>
+       <Weather weather={this.state.downWeather}/>
        </div>
       </div>
     );
