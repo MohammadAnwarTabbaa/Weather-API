@@ -30,13 +30,14 @@ class App extends Component {
  
   
   city = (city)=>{ 
-    
+    let erro= false ; 
     
     fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=8&units=metric&appid=${this.state.kye}`
   )
   .then(res=> {
     if(!res.ok){
-      this.setState({errr :true})
+      this.setState({errr :true});
+      erro = true ; 
     }
     
    return res.json()})
@@ -44,6 +45,7 @@ class App extends Component {
   this.setState({
   isLoaded : true , 
   items : json , 
+  errr : erro
   })
   })
   }
@@ -73,7 +75,7 @@ render() {
           ]
         } else {
           
-          return <p>hi</p>
+          return <p>type the name of the city </p>
         }
       })()}
        
