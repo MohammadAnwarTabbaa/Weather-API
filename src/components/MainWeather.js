@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import clear from '../img/weather-icons/clear.svg'
-import cloudy from '../img/weather-icons/cloudy.svg'
 import drizzle from '../img/weather-icons/drizzle.svg'
 import fog from '../img/weather-icons/fog.svg'
 import mostlycloudy from '../img/weather-icons/mostlycloudy.svg'
@@ -21,6 +20,7 @@ export class MainWeather extends Component {
     render() {
         const src = this.props.weatherarray.weather[0].id ; 
         let imageURL = "";
+        
         if(src<300){
                 imageURL =  storm
             }
@@ -45,12 +45,14 @@ export class MainWeather extends Component {
             else if(src>801 && src<=805){
                 imageURL = mostlycloudy
             }
+            else{
+                imageURL = unknown
+            }
 
 
                return (
             <div className="mainWeather">
-                <img className="mainImage" src={imageURL} alt="clear"/>
-                
+                <img className="mainImage" src={imageURL} alt="weather image"/>
                 <Tempreture temp={this.props.weatherarray}/>
                 <Pressure pressure={this.props.weatherarray}/>
                 

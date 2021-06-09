@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 export class Search extends Component {
  state = {
-   city : ''
+   city : '',
+   errr : false
  }
 
  onClick = (e)=>{
     this.props.city(this.state.city)
   
+}
+
+onheek = (e)=>{
+  this.props.errr(this.state.errr)
+
 }
 
  onChange  = (e)=> this.setState({[e.target.name]: e.target.value}) ; 
@@ -21,7 +27,9 @@ export class Search extends Component {
       name="city"
       placeholder="Type in a city name"
       value={this.state.city}
+      onChange={this.onheek}
       onChange={this.onChange}
+      
       />
       <button
       onClick={this.onClick} 
